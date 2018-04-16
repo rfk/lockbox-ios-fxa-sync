@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "28F951FA19D0F9FA00DCE892"
-               BuildableName = "FxA.framework"
-               BlueprintName = "FxA"
-               ReferencedContainer = "container:FxA.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "28F9520519D0F9FB00DCE892"
-               BuildableName = "FxATests.xctest"
-               BlueprintName = "FxATests"
-               ReferencedContainer = "container:FxA.xcodeproj">
+               BlueprintIdentifier = "23511E051EE23A62002B5507"
+               BuildableName = "FxAUtils.framework"
+               BlueprintName = "FxAUtils"
+               ReferencedContainer = "container:fxa-ios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "28F9520519D0F9FB00DCE892"
-               BuildableName = "FxATests.xctest"
-               BlueprintName = "FxATests"
-               ReferencedContainer = "container:FxA.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28F951FA19D0F9FA00DCE892"
-            BuildableName = "FxA.framework"
-            BlueprintName = "FxA"
-            ReferencedContainer = "container:FxA.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -78,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28F951FA19D0F9FA00DCE892"
-            BuildableName = "FxA.framework"
-            BlueprintName = "FxA"
-            ReferencedContainer = "container:FxA.xcodeproj">
+            BlueprintIdentifier = "23511E051EE23A62002B5507"
+            BuildableName = "FxAUtils.framework"
+            BlueprintName = "FxAUtils"
+            ReferencedContainer = "container:fxa-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -96,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28F951FA19D0F9FA00DCE892"
-            BuildableName = "FxA.framework"
-            BlueprintName = "FxA"
-            ReferencedContainer = "container:FxA.xcodeproj">
+            BlueprintIdentifier = "23511E051EE23A62002B5507"
+            BuildableName = "FxAUtils.framework"
+            BlueprintName = "FxAUtils"
+            ReferencedContainer = "container:fxa-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
