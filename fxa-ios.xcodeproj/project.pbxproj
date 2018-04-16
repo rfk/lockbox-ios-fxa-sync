@@ -94,6 +94,8 @@
 		23EDF0711E9EFE6500F530CF /* NSFileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EDF0701E9EFE6500F530CF /* NSFileManagerExtensions.swift */; };
 		23EDF0731E9EFF3900F530CF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EDF0721E9EFF3900F530CF /* StringExtensions.swift */; };
 		23EDF0751E9F006200F530CF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EDF0741E9F006200F530CF /* ArrayExtensions.swift */; };
+		39294A6F2085057700DC5882 /* NotificationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230DFBBA1EA5709F0051A811 /* NotificationConstants.swift */; };
+		39294A7120850CB200DC5882 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39294A7020850CB200DC5882 /* NotificationNames.swift */; };
 		393F56E62075375500083ADF /* LoginsSynchronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F56E42075375400083ADF /* LoginsSynchronizer.swift */; };
 		393F56E92075377000083ADF /* SyncTelemetryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F56E72075376F00083ADF /* SyncTelemetryUtils.swift */; };
 		393F56EA2075377000083ADF /* SyncStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F56E82075376F00083ADF /* SyncStateMachine.swift */; };
@@ -366,6 +368,7 @@
 		23EDF0701E9EFE6500F530CF /* NSFileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSFileManagerExtensions.swift; path = Extensions/NSFileManagerExtensions.swift; sourceTree = "<group>"; };
 		23EDF0721E9EFF3900F530CF /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extensions/StringExtensions.swift; sourceTree = "<group>"; };
 		23EDF0741E9F006200F530CF /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Extensions/ArrayExtensions.swift; sourceTree = "<group>"; };
+		39294A7020850CB200DC5882 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		393F56E42075375400083ADF /* LoginsSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginsSynchronizer.swift; sourceTree = "<group>"; };
 		393F56E72075376F00083ADF /* SyncTelemetryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncTelemetryUtils.swift; sourceTree = "<group>"; };
 		393F56E82075376F00083ADF /* SyncStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStateMachine.swift; sourceTree = "<group>"; };
@@ -622,6 +625,7 @@
 				23511E081EE23A62002B5507 /* FxAUtils.h */,
 				23511E091EE23A62002B5507 /* Info.plist */,
 				393F576D207BAF5A00083ADF /* Strings.swift */,
+				39294A7020850CB200DC5882 /* NotificationNames.swift */,
 			);
 			path = FxAUtils;
 			sourceTree = "<group>";
@@ -1287,7 +1291,9 @@
 				23511E201EE5DB66002B5507 /* NSUserDefaultsPrefs.swift in Sources */,
 				393F5700207573F500083ADF /* SyncStatusResolver.swift in Sources */,
 				23511E161EE23A88002B5507 /* FxAViewController.swift in Sources */,
+				39294A6F2085057700DC5882 /* NotificationConstants.swift in Sources */,
 				23511E1F1EE5DB5C002B5507 /* Profile.swift in Sources */,
+				39294A7120850CB200DC5882 /* NotificationNames.swift in Sources */,
 				23511E151EE23A88002B5507 /* FxALoginHelper.swift in Sources */,
 				393F576E207BAF5A00083ADF /* Strings.swift in Sources */,
 			);
