@@ -506,6 +506,7 @@ open class FxAClient10 {
                         deferred.fill(Maybe(failure: FxAClientError.local(error as NSError)))
                         return
                     }
+                    log.debug("REQUEST RETURNED \(request) \(response.result)")
 
                     if let data = response.result.value {
                         let json = JSON(data)
