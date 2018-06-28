@@ -311,6 +311,7 @@ open class FirefoxAccount {
         
         let client = FxAClient10(authEndpoint: self.configuration.authEndpointURL, oauthEndpoint: self.configuration.oauthEndpointURL, profileEndpoint: self.configuration.profileEndpointURL)
         client.getProfile(withSessionToken: session.sessionToken as NSData) >>== { result in
+            log.debug("GOT PROFILE, AVATAR = \(result.avatarURL).")
             self.fxaProfile = FxAProfile(email: result.email, displayName: result.displayName, avatar: result.avatarURL)
             NotificationCenter.default.post(name: .FirefoxAccountProfileChanged, object: self)
         }

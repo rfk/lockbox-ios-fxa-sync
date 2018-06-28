@@ -150,6 +150,7 @@ open class FxALoginHelper {
         accountVerified = data["verified"].bool ?? false
         self.account = account
 
+        log.debug("\n\nUpdating profile info\n\n")
         account.updateProfile()
 
         if AppConstants.MOZ_FXA_PUSH {
