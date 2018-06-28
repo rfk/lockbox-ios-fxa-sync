@@ -471,6 +471,7 @@ open class FxAClient10 {
         return self.sign(sessionToken as Data, publicKey: keyPair.publicKey) >>== { signResult in
             log.debug("SIGNED A CERT")
             return self.oauthAuthorize(withSessionToken: sessionToken, keyPair: keyPair, certificate: signResult.certificate) >>== { oauthResult in
+                log.debug("AUTHORIZED A TOKEN")
                 
                 let profileURL = self.profileURL.appendingPathComponent("/profile")
                 var mutableURLRequest = URLRequest(url: profileURL)
@@ -506,22 +507,24 @@ open class FxAClient10 {
                         deferred.fill(Maybe(failure: FxAClientError.local(error as NSError)))
                         return
                     }
-                    log.debug("REQUEST RETURNED \(request) \(response.result)")
+                    log.debug("REQUEST RETURNED \(request)")
 
                     if let data = response.result.value {
                         let json = JSON(data)
                         if let remoteError = FxAClient10.remoteError(fromJSON: json, statusCode: response.response!.statusCode) {
-                            log.debug("REQUEST FAILURE FROM REMOTE ERROR \(remoteError) \(json)")
+                            log.debug("REQUEST FAILURE FROM REMOTE ERROR \(request) \(json)")
                             deferred.fill(Maybe(failure: FxAClientError.remote(remoteError)))
                             return
                         }
 
                         if let response = responseHandler(json) {
+                            log.debug("FULFILLING \(request) WITH \(response)")
                             deferred.fill(Maybe(success: response))
                             return
                         }
                     }
 
+                    log.debug("REQUEST FAILED WITH UNKNOWN ERROR \(request)")
                     deferred.fill(Maybe(failure: FxAClientError.local(FxAClientUnknownError)))
                 }
         }
