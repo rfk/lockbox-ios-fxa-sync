@@ -496,6 +496,7 @@ open class FxAClient10 {
     fileprivate func makeRequest<T>(_ request: URLRequest, responseHandler: @escaping (JSON) -> T?) -> Deferred<Maybe<T>> {
         let deferred = Deferred<Maybe<T>>()
 
+        log.debug("MAKE REQUEST \(request)")
         alamofire.request(request)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -509,7 +510,7 @@ open class FxAClient10 {
                     if let data = response.result.value {
                         let json = JSON(data)
                         if let remoteError = FxAClient10.remoteError(fromJSON: json, statusCode: response.response!.statusCode) {
-                            log.debug("REQUEST FAILURE FROM REMOTE ERROR")
+                            log.debug("REQUEST FAILURE FROM REMOTE ERROR \(remoteError) \(json)")
                             deferred.fill(Maybe(failure: FxAClientError.remote(remoteError)))
                             return
                         }
