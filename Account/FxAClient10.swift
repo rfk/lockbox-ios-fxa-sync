@@ -501,6 +501,7 @@ open class FxAClient10 {
             .responseJSON { response in
                 withExtendedLifetime(self.alamofire) {
                     if let error = response.result.error {
+                        log.debug("REQUEST FAILURE")
                         deferred.fill(Maybe(failure: FxAClientError.local(error as NSError)))
                         return
                     }
@@ -508,6 +509,7 @@ open class FxAClient10 {
                     if let data = response.result.value {
                         let json = JSON(data)
                         if let remoteError = FxAClient10.remoteError(fromJSON: json, statusCode: response.response!.statusCode) {
+                            log.debug("REQUEST FAILURE FROM REMOTE ERROR")
                             deferred.fill(Maybe(failure: FxAClientError.remote(remoteError)))
                             return
                         }
@@ -567,6 +569,7 @@ extension FxAClient10: FxALoginClient {
         let key = (sessionToken as NSData).deriveHKDFSHA256Key(withSalt: salt, contextInfo: contextInfo, length: UInt(2 * KeyLength))!
         mutableURLRequest.addAuthorizationHeader(forHKDFSHA256Key: key)
 
+        log.debug("MAKING SIGN REQUEST")
         return makeRequest(mutableURLRequest, responseHandler: FxAClient10.signResponse)
     }
 }
