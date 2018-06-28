@@ -464,7 +464,9 @@ open class FxAClient10 {
     
     open func getProfile(withSessionToken sessionToken: NSData) -> Deferred<Maybe<FxAProfileResponse>> {
         let keyPair = RSAKeyPair.generate(withModulusSize: 1024)!
+        log.debug("IN THE CLIENT")
         return self.sign(sessionToken as Data, publicKey: keyPair.publicKey) >>== { signResult in
+            log.debug("SIGNED A CERT")
             return self.oauthAuthorize(withSessionToken: sessionToken, keyPair: keyPair, certificate: signResult.certificate) >>== { oauthResult in
                 
                 let profileURL = self.profileURL.appendingPathComponent("/profile")
@@ -473,6 +475,7 @@ open class FxAClient10 {
                 
                 mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 mutableURLRequest.setValue("Bearer " + oauthResult.accessToken, forHTTPHeaderField: "Authorization")
+                log.debug("MAKING PROFILE REQUEST")
                 
                 return self.makeRequest(mutableURLRequest, responseHandler: FxAClient10.profileResponse)
             }

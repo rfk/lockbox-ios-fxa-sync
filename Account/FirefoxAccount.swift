@@ -305,7 +305,9 @@ open class FirefoxAccount {
     // emits two `NotificationFirefoxAccountProfileChanged`, once when the profile has been downloaded and
     // another when the avatar image has been downloaded.
     open func updateProfile() {
+        log.debug("FETCHING PROFILE...")
         guard let session = stateCache.value as? TokenState else {
+            log.debug("WHOOPS, NO SESSION!")
             return
         }
         
