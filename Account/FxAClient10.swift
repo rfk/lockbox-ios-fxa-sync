@@ -8,10 +8,13 @@ import Foundation
 import FxA
 import Deferred
 import SwiftyJSON
+import XCGLogger
 
 public let FxAClientErrorDomain = "org.mozilla.fxa.error"
 public let FxAClientUnknownError = NSError(domain: FxAClientErrorDomain, code: 999,
     userInfo: [NSLocalizedDescriptionKey: "Invalid server response"])
+
+private let log = Logger.syncLogger
 
 let KeyLength: Int = 32
 
